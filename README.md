@@ -3,7 +3,7 @@
 
 This project is based on SadTalkers to implement Wav2lip for video lip synthesis. By using video files to generate lip shapes driven by voice, and setting a configurable enhancement method for the facial area, the synthetic lip shape (face) area image enhancement is performed to improve the clarity of the generated lip shapes. Use the DAIN frame interpolation DL algorithm to add frames to the generated video to supplement the action transition of synthetic lip shapes between frames, making the synthesized lip shapes more smooth, realistic and natural.
 
-## 1.环境准备(Environment)
+## 1. Environment preparation (Environment)
 
 ```python
 pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
@@ -42,19 +42,19 @@ SadTalker-Video-Lip-Sync
 ├──README.md
 ```
 
-## 3.模型推理(Inference)
+## 3. Model inference (Inference)
 
 ```python
 python inference.py --driven_audio <audio.wav> \
                     --source_video <video.mp4> \
-                    --enhancer <none,lip,face> \  #(默认lip)
+                    --enhancer <none,lip,face> \  #(default lip)
                     --use_DAIN \ #(Using this function will occupy a large amount of video memory and consume more time)
              		--time_step 0.5 #(Frame insertion frequency, default 0.5, that is, 25fps—>50fps; 0.25, that is, 25fps—>100fps)
 ```
 
 
 
-## 4.合成效果(Results)
+## 4.Synthetic effects (Results)
 
 ```python
 #The synthesis effect is displayed in the ./sync_show directory:
